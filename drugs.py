@@ -6,7 +6,7 @@ import plotly.express as px
 
 def intro():
 
-    st.image("portada.jpeg")
+    st.image("data/portada.jpeg")
     st.title("ML Drugs Sentiment Analysis 📊 ")
     st.subheader("Mie Taira - Carmen Rey")
 
@@ -47,7 +47,7 @@ def intro():
         •   En 2025 USA prevé gastar de **605 a 635 billiones de dolares** en medicamentos.
         """
     )
-    st.image("revenue.png")
+    st.image("data/revenue.png")
     st.markdown(
         """
         •   En 2018, los medicamentos que más han sido ensayados eran para tratar el **cancer y enfermedades del sistema nervioso**.
@@ -59,7 +59,7 @@ def intro():
         •   Los medicamentos terapéuticos que más ingresos han generado en 2019 son los **oncológicos**.
         """
     )
-    st.image("top5drugs.png")
+    st.image("data/top5drugs.png")
     st.markdown(
         """
         •   Estos medicamentos para tratar el cancer generan aproximadamente **99,5 billones $** de ingresos.
@@ -95,8 +95,8 @@ def intro():
         """
     )
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -117,8 +117,8 @@ def intro():
 def diabetes():
     st.markdown(f"# {list(page_names_to_funcs.keys())[1]}")
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -159,12 +159,12 @@ def diabetes():
     st.plotly_chart(fig5)
 
     st.subheader("Resultados obtenidos")
-    st.image("df_sentsia_diabetes.png")
+    st.image("data/df_sentsia_diabetes.png")
 
     st.write("**Liraglutide**: Droga más valorada en Diabetes, type 2")
-    st.image("df_sentsia_lira.png")
-    st.image("df_sentNB_lira.png")
-    st.image("pol_lira.png")
+    st.image("data/df_sentsia_lira.png")
+    st.image("data/df_sentNB_lira.png")
+    st.image("data/pol_lira.png")
 
 
 # ### DFS CON LAS VALORACIONES DE CADA ENFERMEDAD/CONDICIÓN
@@ -172,8 +172,8 @@ def cancer():
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -227,21 +227,21 @@ def cancer():
     st.plotly_chart(fig6)
 
     st.subheader("Resultados obtenidos")
-    st.image("df_sentsia_cancer.png")
-    st.image("df_sentNB_cancer.png")
-    st.image("pol_cancer.png")
+    st.image("data/df_sentsia_cancer.png")
+    st.image("data/df_sentNB_cancer.png")
+    st.image("data/pol_cancer.png")
 
     st.write("Pazopanib: Droga más valorada en Renal Cell Carcinoma")
-    st.image("df_sentsia_pazo.png")
-    st.image("df_sentNB_pazo.png")
-    st.image("pol_pazo.png")
+    st.image("data/df_sentsia_pazo.png")
+    st.image("data/df_sentNB_pazo.png")
+    st.image("data/pol_pazo.png")
 
 def depresion():
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[3]}")
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -279,17 +279,17 @@ def depresion():
     st.plotly_chart(fig7)
 
     st.subheader("Resultados obtenidos")
-    st.image("df_sentsia_depresion.png")
+    st.image("data/df_sentsia_depresion.png")
 
     st.write("Bupropion: Droga más valorada en Depression")
-    st.image("df_sentsia_bupro.png")
+    st.image("data/df_sentsia_bupro.png")
 
 def control():
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[4]}")
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -326,21 +326,21 @@ def control():
     st.plotly_chart(fig8)
 
     st.subheader("Resultados obtenidos")
-    st.image("df_sentsia_controlnatalidad.png")
+    st.image("data/df_sentsia_controlnatalidad.png")
 
     st.write("Etonogestrel: Droga más valorada en birth control")
-    st.image("df_sentsia_etono.png")
+    st.image("data/df_sentsia_etono.png")
 
 def humira():
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[5]}")
     
-    st.image("humira-foto.jpg", width = 300)
+    st.image("data/humira-foto.jpg", width = 300)
     st.subheader("Medicamento más vendido en el mundo")
     st.write("Humira de Abbvie es el fármaco más vendido en el mundo en 2020. Se usa para tratar: Artritis reumatoide , Psoriasis en placas, Hidradenitis supurativa, Enfermedad de Crohn, Colitis ulcerosa, Uveitis no infecciosa, Artritis reumatoide, Psoriasis en placas, Hidradenitis supurativa, Enfermedad de Crohn, Colitis ulcerosa, Uveitis no infecciosa")
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -363,17 +363,17 @@ def humira():
     st.subheader("Resultados obtenidos")
     st.write("Media de las valoraciones:", round(humira["rating"].mean()))
     st.write("Suma de comentarios útiles:", humira["usefulCount"].sum())
-    st.image("df_sentsia_humira.png")
+    st.image("data/df_sentsia_humira.png")
 
 def lipitor():
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[6]}")
-    st.image("lipitor-foto.png", width = 400)
+    st.image("data/lipitor-foto.png", width = 400)
     st.subheader("Medicamento más vendido en US")
     st.write("Lipitor de Pfizer es el fármaco de mayor venta en general en los EE. UU. Se utiliza para el control de los niveles altos de colesterol (Hypercholesterolemia - Atorvastatina)")
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -397,20 +397,20 @@ def lipitor():
     st.write("Media de las valoraciones:", round(lipi["rating"].mean()))
     st.write("Suma de comentarios útiles:", lipi["usefulCount"].sum())
 
-    st.image("df_sentsia_lipitor.png")
-    st.image("df_sentNB_lipitor.png")
-    st.image("pol_lipi.png")
+    st.image("data/df_sentsia_lipitor.png")
+    st.image("data/df_sentNB_lipitor.png")
+    st.image("data/pol_lipi.png")
 
 def keytruda():
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[7]}")
     
-    st.image("keytruda.jpeg", width = 300)
+    st.image("data/keytruda.jpeg", width = 300)
     st.subheader("2º medicamento más vendido en US")
     st.write("Es un tipo de anticuerpo monoclonal inhibidor de puntos de control inmunitario. También se llama pembrolizumab. Se une a una proteína para ayudar a las células inmunitarias a destruir más células cancerosas, y que se usa para el tratamiento de muchos tipos diferentes de cáncer")
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -435,16 +435,16 @@ def keytruda():
     st.write("Media de las valoraciones:", round(keytruda["rating"].mean()))
     st.write("Suma de comentarios útiles:", keytruda["usefulCount"].sum())
 
-    st.image("df_sentsia_keytruda.png")
-    st.image("df_sentNB_keytruda.png")
-    st.image("pol_keytruda.png")
+    st.image("data/df_sentsia_keytruda.png")
+    st.image("data/df_sentNB_keytruda.png")
+    st.image("data/pol_keytruda.png")
 
 def low_high_rates():
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[8]}")
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -466,22 +466,22 @@ def low_high_rates():
     st.dataframe(df_low_rates)
 
     st.subheader("Resultados obtenidos")
-    st.image("df_sentsia_low_rates.png")
+    st.image("data/df_sentsia_low_rates.png")
     
     st.subheader("Valoraciones más altas: Rating = 10")
     df_high_rates = df[(df["rating"] == 10.0)]
     st.dataframe(df_high_rates)
 
     st.subheader("Resultados obtenidos")
-    st.image("df_sentsia_high_rates.png")
+    st.image("data/df_sentsia_high_rates.png")
    
 
 def visualizaciones():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     st.markdown(f"# {list(page_names_to_funcs.keys())[9]}")
 
-    train = pd.read_csv('drugsComTrain_raw.tsv',sep ="\t")
-    test = pd.read_csv('drugsComTest_raw.tsv',sep ="\t")
+    train = pd.read_csv('data/drugsComTrain_raw.tsv',sep ="\t")
+    test = pd.read_csv('data/drugsComTest_raw.tsv',sep ="\t")
     df = pd.concat([train, test])
     # EDA
     df.rating = df.rating.astype(int)
@@ -585,7 +585,7 @@ def conclusion():
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[10]}")
 
-    st.image("nlp.jpg" , width = 500)
+    st.image("data/nlp.jpg" , width = 500)
     
     st.markdown(
         """
@@ -620,7 +620,7 @@ def conclusion():
     
     #button
     if st.button('and this is... '):
-        st.image("end.jpg")
+        st.image("data/end.jpg")
     else:
         st.write(' ')
         
