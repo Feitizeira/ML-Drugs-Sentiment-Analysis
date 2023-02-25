@@ -10,7 +10,7 @@ def intro():
     st.title("ML Drugs Sentiment Analysis 📊 ")
     st.subheader("Mie Taira - Carmen Rey")
 
-    st.sidebar.success("Select an Option")
+    st.sidebar.success("Analizando dataset")
 
     st.markdown(
         """
@@ -368,7 +368,7 @@ def humira():
 def lipitor():
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[6]}")
-    st.image("data/lipitor-foto.png", width = 400)
+    st.image("data/Lipitor-foto.png", width = 400)
     st.subheader("Medicamento más vendido en US")
     st.write("Lipitor de Pfizer es el fármaco de mayor venta en general en los EE. UU. Se utiliza para el control de los niveles altos de colesterol (Hypercholesterolemia - Atorvastatina)")
 
