@@ -616,15 +616,9 @@ def conclusion():
     plt.axis('off')
     plt.title('Pie Chart Representation of Sentiments', fontsize = 6)
     plt.show()
-    st.pyplot()
+    st.pyplot(plt)
     
-    #button
-    if st.button('and this is... '):
-        st.image("data/end.jpg")
-    else:
-        st.write(' ')
-        
-
+ 
 page_names_to_funcs = {
     "—"                         : intro,
     "Diabetes"                  : diabetes,
